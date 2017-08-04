@@ -7,7 +7,6 @@
 'use strict';
 
 import React, {Component} from 'react';
-import PropTypes from 'prop-types'
 
 import {subscribe} from 'subscribe-ui-event';
 import classNames from 'classnames';
@@ -403,35 +402,6 @@ Sticky.defaultProps = {
     activeClass: 'active',
     releasedClass: 'released',
     onStateChange: null
-};
-
-/**
- * @param {Bool} enabled A switch to enable or disable Sticky.
- * @param {String/Number} top A top offset px for Sticky. Could be a selector representing a node
- *        whose height should serve as the top offset.
- * @param {String/Number} bottomBoundary A bottom boundary px on document where Sticky will stop.
- *        Could be a selector representing a node whose bottom should serve as the bottom boudary.
- */
-Sticky.propTypes = {
-    enabled: PropTypes.bool,
-    top: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number
-    ]),
-    bottomBoundary: PropTypes.oneOfType([
-        PropTypes.object,  // TODO, may remove
-        PropTypes.string,
-        PropTypes.number
-    ]),
-    enableTransforms: PropTypes.bool,
-    activeClass: PropTypes.string,
-    releasedClass: PropTypes.string,
-    onStateChange: PropTypes.func,
-    shouldFreeze: PropTypes.func,
-    innerZ: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number
-    ])
 };
 
 Sticky.STATUS_ORIGINAL = STATUS_ORIGINAL;

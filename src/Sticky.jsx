@@ -342,8 +342,8 @@ class Sticky extends Component {
         }
         // bind the listeners regardless if initially enabled - allows the component to toggle sticky functionality
         this.subscribers = [
-            subscribe('scrollStart', this.handleScrollStart.bind(this), {useRAF: true}),
-            subscribe('scroll', this.handleScroll.bind(this), {useRAF: true, enableScrollInfo: true}),
+            subscribe('scrollStart', this.handleScrollStart.bind(this), {useRAF: true, throttleRate: 0}),
+            subscribe('scroll', this.handleScroll.bind(this), {useRAF: true, enableScrollInfo: true, throttleRate: 0}),
             subscribe('resize', this.handleResize.bind(this), {enableResizeInfo: true})
         ];
     }
